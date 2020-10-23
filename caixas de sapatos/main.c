@@ -1,3 +1,39 @@
+/*
+Caixas para sapatos
+
+
+Uma loja de calçados está com um problema no seu estoque. Existem muitos sapatos espalhados e o dono não sabe se todos tem o seu par. Para resolver o problema ele resolveu colocar todos os pares em caixas e antes de comprar as caixas solicitou que você escrevesse um programa em C para contar quantos pares completos e corretos o estoque possui.
+
+A primeira informação solicitada é o total de sapatos (N), que deve ser um número inteiro positivo. Após saber o total de sapatos o usuário deve informar para cada sapato o tamanho (TAM) do sapato (um valor inteiro) e uma letra indicando se é o pé direito (caracter ‘D’) ou esquerdo (caracter ‘E’). A informação deve estar separada por um espaço e lida na mesma linha. Considere 30 <=TAM <=60.
+
+O programa deve permitir a análise de vários conjuntos de sapatos e deve parar quando o usuário informar N = -99.
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+Exemplo de entrada:
+
+4
+
+40 D
+
+41 E
+
+41 D
+
+40 E
+
+Saída
+
+2
+
+Entrada
+
+-99  // o programa para
+
+*/
+
 #include <stdio.h>
 #include <string.h>
 

@@ -1,70 +1,64 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char codigo[400]="";
-    char aux[4];
-    //char aux2[4];
+int main(){
+    
+    char str[10][4] = {};
     int n = 0;
-
-    scanf("%i", &n);
+    int par = 0;
+    int aramazena_pos[20]={};
+    int tem_no_array = 0;
+    int pos = 0;
     
+    int i;
+    int k;
+    int j;
+    
+    for (i = 0; i < 20; i++){
+        aramazena_pos[i] = -1;
+    }
+    
+    scanf("%d", &n);
     setbuf(stdin,NULL);
-    //fgets(aux, 5, stdin);
-    //strcpy(aux,aux2);
-    //strncat(codigo, aux, 3);
     
-    //setbuf(stdin,NULL);
-
-    while (n > 0) {
+    while(n != -99){
         
-        for (int i = 0; i < strlen(aux); i++){
-            aux[i]=' ';
+        for (i = 0; i < n; i++){
+            setbuf(stdin,NULL);
+            fgets(str[i],6,stdin);
         }
-        printf("\nentre com um nome\n");
-        fgets(aux, 4, stdin);
+        
+        for (k = 0 ; k < n-1; k++){
+            for (j = k + 1; j < n; j++){
+                if(strncmp(str[k], str[j],2) == 0){
+                    if(strncmp(str[k], str[j],4) == 0){
+                        
+                    }
+                    else{
+                        while(aramazena_pos[pos] != -1){
+                            pos++;
+                        }
+                        
+                        for (i = 0; i < pos; i++){
+                            if(aramazena_pos[i] == k || aramazena_pos[i] == j){
+                                tem_no_array = 1;   
+                            }
+                        }
+                        
+                        if(!tem_no_array){
+                            aramazena_pos[pos] = k;
+                            aramazena_pos[pos + 1] = j;
+                            par++;
+                        }
+                    }
+                }
+            }
+        }
+        
+        printf("%d\n", par);
+        
+        scanf("%d", &n);
         setbuf(stdin,NULL);
-        //puts(aux);
-        strncat(codigo, aux, 3);
-        //strcat(codigo,aux);
-        printf("\n concatenado --> %s", codigo);
-        n--;
     }
-
-    printf("%s", codigo);
-
-    /*
-    fgets(codigo, 400, stdin);
-
-    //printf("%s", codigo);
-
-    int indice = 4;
-    int i = 0;
-
-    int ver = 0;
-
-    while (codigo[i] != '\0') {
-        if (codigo[i] > 'v') {
-            indice = indice - (122 - codigo[i]) - 1;
-            codigo[i] = 'a';
-        }
-
-        if (codigo[i] == ' ') {
-        } else {
-            codigo[i] = codigo[i] + indice;
-            //printf("i --> %d valor--> %c --> indice %d \n", i, codigo[i], indice);
-        }
-        i++;
-        indice = 4;
-    }
-
-    i = 0;
-    for (i; i < strlen(codigo); i++) {
-        codigo[i] = toupper(codigo[i]);
-    }
-
-    printf("%s", codigo);
-    */
-
     return 0;
 }

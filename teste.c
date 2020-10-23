@@ -1,85 +1,118 @@
-/* strncat example */
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[][5] = {};
-    char str1[200] = "";
-    char str2[5];
-    char str_aux_verifica[5];
-    int n = 4;
-    scanf("%d", &n);
-    setbuf(stdin, NULL);
-    //strcpy (str1,"To be ");
-    //strcpy (str2,"or not to be");
+    char str[10][4] = {};
+    int n = 0;
     int par = 0;
+    int parada = 0;
 
-    for (int i = 0; i < n; i++) {
-        scanf("%s", str[i]);
-        setbuf(stdin, NULL);
-        //strncat(str[i], str2, 4);
-        puts(str[i]);
+    int armazena_pos[10] = {};
+    int i = 0;
+    int k = 0;
+    int j = 0;
+
+    for (i = 0; i < 10; i++) {
+        armazena_pos[i] = -1;
     }
-
-    printf("\n");
-
-    for (int k = 0; k < n - 1; k++)
-        for (int j = k + 1; j < n; j++)
-            if (strncmp(str[k], str[j], 2) == 0) {
-                if (strncmp(str[k], str[j], 4) == 0) {
-                }else
-                {
-                    par ++;
-                }
-                
-            }
-
-    for (int i = 0; i < n; i++) {
-        puts(str[i]);
-    }
-
-    /*  
-    while (n > 0) {
-        scanf("%s", str2);
-        strncat(str1, str2, 4);
-        puts(str1);
-        n--;
-    }
-
-    n=4;
-
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            if (str1[3*i + j] == str_aux_verifica[j]){
-
-            }
-        }
-        
-        
-    }
-    */
+    //printf("%d", armazena_pos[0]);
 
     /*
-    setbuf(stdin, NULL);
-    //fgets(str2, 4, stdin);
-    scanf("%s", str2);
-    strncat(str1, str2, 4);
-    puts(str1);
+    while (parada != -99) {
+        scanf("%d", &n);
+        setbuf(stdin, NULL);
 
-    setbuf(stdin, NULL);
-    scanf("%s", str2);
-    //fgets(str2, 4, stdin);
-    strncat(str1, str2, 4);
-    puts(str1);
+        for (i = 0; i < n; i++) {
+            setbuf(stdin, NULL);
+            fgets(str[i], 6, stdin);
+        }
 
-    setbuf(stdin, NULL);
-    scanf("%s", str2);
-    //fgets(str2, 4, stdin);
-    strncat(str1, str2, 4);
-    puts(str1);
+        for (k = 0; k < n - 1; k++)
+            for (j = k + 1; j < n; j++)
+                if (strncmp(str[k], str[j], 2) == 0) {
+                    if (strncmp(str[k], str[j], 4) == 0) {
+                    } else {
+                        
+                        par++;
+                    }
+                }
+            
+        
+        printf("%d\n", par);
+
+        scanf("%d", &parada);
+        setbuf(stdin, NULL);
+    }
+
     */
+    return 0;
+}
+
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[10][4] = {};
+    int n = 0;
+    int par = 0;
+    int parada = 0;
+    
+    /*
+
+    int k = 2;
+    char str2[10]={};
+
+    printf("%d",strlen(str2));
+
+    printf("%d",strlen(str2));
+    printf("%s",str2);
+
+    scanf("%d", &parada);
+    setbuf(stdin, NULL);
+
+    printf("%d",parada);
+    */
+
+/*
+   
+
+    while (parada != -99) {
+        scanf("%d", &n);
+        setbuf(stdin, NULL);
+
+        for (int i = 0; i < n; i++) {
+            //scanf("%s", str[i]);
+            setbuf(stdin, NULL);
+            fgets(str[i], 6, stdin);
+            //printf("%s", str[i]);
+        }
+
+        for (int k = 0; k < n - 1; k++)
+            for (int j = k + 1; j < n; j++)
+                if (strncmp(str[k], str[j], 2) == 0) {
+                    if (strncmp(str[k], str[j], 4) == 0) {
+                    } else {
+                        par++;
+                        //str[0][k] = "";
+                        //str[0][j] = "";
+                        break;
+                    }
+                }
+
+        printf("%d\n", par);
+
+        scanf("%d", &parada);
+        setbuf(stdin, NULL);
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%s", str);
+    }
+
 
     return 0;
 }
+
+*/

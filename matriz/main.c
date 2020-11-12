@@ -35,12 +35,12 @@ int main() {
                 somatorio_diagonal += matriz[i][j];
             } else if (matriz[i][j]) {
                 matriz_zero = 0;
-            } 
+            }
         }
     }
 
-    i=0;
-    for(j = 2; j >= 0; j--){
+    i = 0;
+    for (j = 2; j >= 0; j--) {
         somatorio_diagonal_secundaria += matriz[i][j];
         i++;
     }
@@ -50,19 +50,11 @@ int main() {
     if (matriz_identidade) {
         printf("MATRIZ IDENTIDADE\n");
     }
-    if(matriz_zero && !somatorio_diagonal){
+    if (matriz_zero && !somatorio_diagonal) {
         printf("MATRIZ ZERO\n");
     }
     printf("Soma1 = %d\n", somatorio_diagonal);
     printf("Soma2 = %d\n", somatorio_diagonal_secundaria);
-
-    /*
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
-            printf("%d\n", matriz[i][j]);
-        }
-    }
-    */
 
     return 0;
 }

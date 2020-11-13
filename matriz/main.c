@@ -1,19 +1,14 @@
 #include <stdio.h>
 
 int main() {
+
     int n = 0;
 
-    int matriz_identidade = 1;
+    int matriz_identidade = 0;
     int matriz_zero = 1;
     int somatorio_diagonal = 0;
     int somatorio_diagonal_secundaria = 0;
 
-    /*
-
-    int vetor[20] = {};
-    int voltou = 0;
-
-    */
     int i = 0;
     int j = 0;
 
@@ -22,12 +17,10 @@ int main() {
     int matriz[n][n];
 
     for (i = 0; i < n; i++) {
-        //for (j = 1; j < n; j++) {
-        scanf("%d %d %d", &matriz[i][0], &matriz[i][1], &matriz[i][2]);
-        //}
+        for (j = 0; j < n; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
     }
-
-    //matriz_identidade = (matriz[0][0] + matriz[1][1] + matriz[2][2]) / matriz[0][0] == 3 ? 1 : 0;
 
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
@@ -45,7 +38,16 @@ int main() {
         i++;
     }
 
-    matriz_identidade = (matriz[0][0] + matriz[1][1] + matriz[2][2]) / matriz[0][0] == 3 ? 1 * matriz_zero : 0;
+    if(matriz[0][0]){
+        matriz_identidade = somatorio_diagonal / matriz[0][0] == n ? 1 * matriz_zero : 0;
+    }
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
 
     if (matriz_identidade) {
         printf("MATRIZ IDENTIDADE\n");

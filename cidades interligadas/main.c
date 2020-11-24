@@ -136,20 +136,28 @@ int main() {
 
     */    
 
+    k=n;
     while (n > 0) {
         printf("no while \n");
         //int cont_atual = 0;
         cont_prox = 0;
+        /*
+        1 1 1 0
 
-        
+        0 1 1 0
 
-        for (i = 0; i < n; i++) {
+        1 0 1 1
+
+        0 0 1 1
+        */
+
+        for (i = 0; i < k; i++) {
             if (matriz[i][prox] && i != prox) {
                 cont_prox++;
             }
         }
 
-        for (j = 0; j < n; j++) {
+        for (j = 0; j < k; j++) {
             if (matriz[prox][j] && j != prox) {
                 cont_prox++;
             }
@@ -163,7 +171,7 @@ int main() {
             printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
         }
 
-        prox ++;
+        prox++;
         n--;
     }
 

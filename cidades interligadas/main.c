@@ -120,23 +120,53 @@ int main() {
         }
     }
 
-    while (k > 0) {
-        for (i = 0; i < n; i++) {
-            if (matriz[i][k] && i != k) {
-                cont_estrada_entra++;
+    for (i = 0; i < n; i++) {
+            if (matriz[i][maior_num_estradas] && i != maior_num_estradas) {
+                cont_atual++;
             }
         }
 
         for (j = 0; j < n; j++) {
-            if (matriz[k][j] && j != k) {
-                cont_estrada_sai++;
+            if (matriz[maior_num_estradas][j] && j != maior_num_estradas) {
+                cont_atual++;
+            }
+        }
+        printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
+
+        
+
+    while (n > 0) {
+        printf("no while \n");
+        //int cont_atual = 0;
+        cont_prox = 0;
+
+        
+
+        for (i = 0; i < n; i++) {
+            if (matriz[i][prox] && i != prox) {
+                cont_prox++;
             }
         }
 
-        k--;
+        for (j = 0; j < n; j++) {
+            if (matriz[prox][j] && j != prox) {
+                cont_prox++;
+            }
+        }
+                    printf("cont prox = %d  prox = %d \n", cont_prox, prox);
+
+
+        if(cont_prox > cont_atual){
+            maior_num_estradas = prox;
+            cont_atual = cont_prox;
+            printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
+        }
+
+        prox ++;
+        n--;
     }
 
-    printf("%d \n%d \n", cont_estrada_entra, cont_estrada_sai);
+    printf("%d \n%d \n%d \n", cont_estrada_entra, cont_estrada_sai, maior_num_estradas);
 
     return 0;
 }

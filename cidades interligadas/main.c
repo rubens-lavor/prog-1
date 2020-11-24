@@ -91,7 +91,7 @@ int main() {
     int cont_estrada_sai = 0;
 
     int maior_num_estradas = 0;
-    int prox = 1;
+    int prox = 0;
     int cont_atual = 0;
     int cont_prox = 0;
 
@@ -120,6 +120,7 @@ int main() {
         }
     }
 
+    /*
     for (i = 0; i < n; i++) {
             if (matriz[i][maior_num_estradas] && i != maior_num_estradas) {
                 cont_atual++;
@@ -133,7 +134,7 @@ int main() {
         }
         printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
 
-        
+    */    
 
     while (n > 0) {
         printf("no while \n");

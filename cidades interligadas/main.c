@@ -1,10 +1,7 @@
 /*
 
 VPL7 - Cidades interligadas
-Disponível a partir de: Wednesday, 11 Nov 2020, 12:00
-Data de entrega: Friday, 27 Nov 2020, 23:59
-Arquivos requeridos: solucao.c (Baixar)
-Tipo de trabalho: Trabalho individual
+
 Considere n cidades numeradas de 0 a n-1 que estão interligadas por uma série de estradas de mão única. As ligações entre as cidades são representadas pelos elementos de uma matriz quadrada  Lnxn, cujos elementos lij assumem o valor 1 ou 0, conforme exista ou não estrada direta que saia da cidade i e chegue à cidade j. Assim, os elementos da linha i indicam as estradas que saem da cidade i, e os elementos da coluna j indicam as estradas que chegam à cidade j.
 
 Por convenção lii = 1. A figura mostra um exemplo para n = 4.
@@ -23,19 +20,6 @@ O programa deve ler a matriz linha por linha e ao final da entrada dos dados dev
 
 ---------------------------------------------------------------------------------------------------------
 
-Lembretes:
-
-* Você deve resolver o problema no arquivo disponível no VPL ao abrir a aba Editar, não deve ser anexado nenhum arquivo;
-
-* A correção é automática, portanto as instruções sobre entrada e saída são muito importantes. Sempre preste atenção ao exemplo apresentado junto com o problema;
-
-* Não esqueçam de inserir as bibliotecas básicas;
-
-* Lembrem-se que o comando \n avança o cursor para uma nova linha;
-
-* Caso utilize o comando printf("") no início do programa, insira : no final do texto ou utilize \n para que essa informação não seja interpretada como saída do programa. Exemplo: printf("Utilize:") e/ou printf("Utilize \n").
-
----------------------------------------------------------------------------------------------------------
 
 Exemplo de entrada:
 
@@ -92,3 +76,67 @@ Saída:
 2
 
 */
+
+// as que entram conta as colunas
+// as que saem conta as linhas
+
+#include <stdio.h>
+
+int main() {
+    int n = 0;
+    int k = 0;
+    int i = 0;
+    int j = 0;
+    int cont_estrada_entra = 0;
+    int cont_estrada_sai = 0;
+
+    int maior_num_estradas = 0;
+    int prox = 1;
+    int cont_atual = 0;
+    int cont_prox = 0;
+
+    printf("INFORME UM VALOR \n");
+    scanf("%d", &n);
+
+    int matriz[n][n];
+
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    scanf("%d", &k);
+
+    for (i = 0; i < n; i++) {
+        if (matriz[i][k] && i != k) {
+            cont_estrada_entra++;
+        }
+    }
+
+    for (j = 0; j < n; j++) {
+        if (matriz[k][j] && j != k) {
+            cont_estrada_sai++;
+        }
+    }
+
+    while (k > 0) {
+        for (i = 0; i < n; i++) {
+            if (matriz[i][k] && i != k) {
+                cont_estrada_entra++;
+            }
+        }
+
+        for (j = 0; j < n; j++) {
+            if (matriz[k][j] && j != k) {
+                cont_estrada_sai++;
+            }
+        }
+
+        k--;
+    }
+
+    printf("%d \n%d \n", cont_estrada_entra, cont_estrada_sai);
+
+    return 0;
+}

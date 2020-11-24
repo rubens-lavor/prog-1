@@ -41,18 +41,25 @@ void maiores(int A[][5], int B[], int x) {
             }
         }
     }
+}
+
+void imprime_vetor(int B[], int x) {
+    int i;
     for (i = 0; i < x; i++) {
         printf("%d ", B[i]);
     }
     printf("\n");
 }
 
-void imprime_vetor(int B[], int x) {
-    //escreva o código da função aqui
-    //analise o código do programa principal e veja como usar o return;
-}
-
 void simetrica(int A[][5], int x) {
-    //escreva o código da função aqui
-    //analise o código do programa principal e veja como usar o return;
+    int i, j;
+    for (i = 0; i < x; i++) {
+        for (j = i + 1; j < 5; j++) {
+            if (A[i][j] != A[j][i])
+                printf("nao simetrica\n");
+            return;
+        }
+    }
+    printf("simetrica\n");
+    return;
 }

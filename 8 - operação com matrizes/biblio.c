@@ -1,5 +1,4 @@
 #include "biblio.h"
-
 #include <stdio.h>
 
 void le_matriz(int A[][5], int x) {
@@ -17,7 +16,8 @@ void imprime_matriz(int A[][5], int x) {
         for (j = 0; j < 5; j++) {
             printf("%d ", A[i][j]);
         }
-        printf("\n");
+        if(i!=x-1)
+            printf("\n");
     }
 }
 
@@ -36,7 +36,7 @@ void maiores(int A[][5], int B[], int x) {
     for (i = 0; i < x; i++) {
         B[i] = A[i][0];
         for (j = 1; j < 5; j++) {
-            if (A[i][j - 1] < A[i][j]) {
+            if (B[i] < A[i][j]) {
                 B[i] = A[i][j];
             }
         }
@@ -55,11 +55,12 @@ void simetrica(int A[][5], int x) {
     int i, j;
     for (i = 0; i < x; i++) {
         for (j = i + 1; j < 5; j++) {
-            if (A[i][j] != A[j][i])
-                printf("nao simetrica\n");
-            return;
+            if (A[i][j] != A[j][i]){
+                printf("\nnao simetrica");
+                return;
+            }
         }
     }
-    printf("simetrica\n");
+    printf("\nsimetrica");
     return;
 }

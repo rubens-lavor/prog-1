@@ -29,6 +29,7 @@ A saída gerada deve ser:
 #include <stdio.h>
 #include "biblio.h"
 
+
 int main(){
     int lin,x;
     scanf("%i",&lin);

@@ -137,7 +137,7 @@ int main() {
     */    
 
     k=n;
-    while (n > 0) {
+    while (k > 0) {
         printf("no while \n");
         //int cont_atual = 0;
         cont_prox = 0;
@@ -151,18 +151,18 @@ int main() {
         0 0 1 1
         */
 
-        for (i = 0; i < k; i++) {
+        for (i = 0; i < n; i++) {
             if (matriz[i][prox] && i != prox) {
                 cont_prox++;
             }
         }
 
-        for (j = 0; j < k; j++) {
+        for (j = 0; j < n; j++) {
             if (matriz[prox][j] && j != prox) {
                 cont_prox++;
             }
         }
-                    printf("cont prox = %d  prox = %d \n", cont_prox, prox);
+                    //printf("cont prox = %d  prox = %d \n", cont_prox, prox);
 
 
         if(cont_prox > cont_atual){
@@ -172,10 +172,16 @@ int main() {
         }
 
         prox++;
-        n--;
+        k--;
     }
 
     printf("%d \n%d \n%d \n", cont_estrada_entra, cont_estrada_sai, maior_num_estradas);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
 
     return 0;
 }

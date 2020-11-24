@@ -3,8 +3,12 @@
 #include <stdio.h>
 
 void le_matriz(int A[][5], int x) {
-    //escreva o código da função aqui
-    //analise o código do programa principal e veja como usar o return;
+    int i,j;
+    for (i = 0; i < x; i++) {
+        for (j = 0; j < 5; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
 }
 
 void imprime_matriz(int A[][5], int x) {

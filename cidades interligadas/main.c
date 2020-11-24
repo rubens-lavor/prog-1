@@ -134,9 +134,9 @@ int main() {
         }
         printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
 
-    */    
+    */
 
-    k=n;
+    k = n;
     while (k > 0) {
         printf("no while \n");
         //int cont_atual = 0;
@@ -162,20 +162,19 @@ int main() {
                 cont_prox++;
             }
         }
-                    //printf("cont prox = %d  prox = %d \n", cont_prox, prox);
+        //printf("cont prox = %d  prox = %d \n", cont_prox, prox);
 
-
-        if(cont_prox > cont_atual){
+        if (cont_prox >= cont_atual) {
             maior_num_estradas = prox;
             cont_atual = cont_prox;
-            printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
+            //printf("cont atual = %d  cidade = %d \n", cont_atual, maior_num_estradas);
         }
 
         prox++;
         k--;
     }
 
-    printf("%d \n%d \n%d \n", cont_estrada_entra, cont_estrada_sai, maior_num_estradas);
+    printf("%d \n%d \n%d \n", cont_estrada_sai, cont_estrada_entra, maior_num_estradas);
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
             printf("%d ", matriz[i][j]);

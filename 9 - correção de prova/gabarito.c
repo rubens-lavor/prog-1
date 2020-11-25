@@ -1,7 +1,6 @@
 //O problema deve ser resolvido neste arquivo.
 
 #include "gabarito.h"
-
 #include <stdio.h>
 
 void gabarito(int *V) {
@@ -33,7 +32,8 @@ void imprime_mat(int X[][10], int alun) {
 
 void imprime_vet(int *V, int alun) {
     int i;
-    for (i = 0; i < 10; i++) {
+    printf("\n");
+    for (i = 0; i < alun; i++) {
         printf("%d ", V[i]);
     }
 }
@@ -58,12 +58,12 @@ float calcula_media_turma(int *V, int alun) {
     for (i = 0; i < alun; i++) {
         somatorio += V[i];
     }
-
+    printf("\n");
     return somatorio/alun;
 }
 
 int calcula_acima(int *N, float med, int alun) {
-    int cont;
+    int cont = 0;
     int i;
     for (i = 0; i < alun; i++) {
         if(N[i]>=med)
@@ -73,7 +73,7 @@ int calcula_acima(int *N, float med, int alun) {
 }
 
 int calcula_abaixo(int *N, float med, int alun) {
-    int cont;
+    int cont = 0;
     int i;
     for (i = 0; i < alun; i++) {
         if(N[i]<med)
@@ -81,3 +81,5 @@ int calcula_abaixo(int *N, float med, int alun) {
     }
     return cont;
 }
+
+

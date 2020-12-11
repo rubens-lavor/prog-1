@@ -12,12 +12,12 @@ int conta(float *v, int num){
     int i;
     int num_int=0;
     for (i = 0; i < num; i++) {
-        num_int = v[i];
-        if ( !num_int%2 ) {
+        num_int = v[i] > 0 ? v[i]: 2;
+        //num_int = v[i];
+        if ( (num_int%2) ) {
             contagem ++;
         }
     }
-
     return contagem;
 }
 

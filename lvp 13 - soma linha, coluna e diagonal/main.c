@@ -24,20 +24,20 @@ int main() {
   }
 
   // coluna
-  for (i = 0; i < n; i++) {
+  for (i = 1; i < n; i++) {
     coluna += matriz[i][0];
   }
 
   // diagonal
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
+  for (i = 1; i < n; i++) {
+    for (j = 1; j < n; j++) {
       if (i == j) {
         diagonal += matriz[i][j];
       }
     }
   }
 
-  printf("%i %i %i", linha, coluna, diagonal);
+  printf("%i", linha + coluna + diagonal);
 
   return 0;
 

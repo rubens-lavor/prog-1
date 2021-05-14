@@ -1,3 +1,14 @@
+/*
+Elabore um algoritmo que leia x valores inteiros, sendo o valor x (com x > 0) determinado como primeira entrada do algoritmo.
+
+Atribua cada valor lido para dois vetores conforme: se um valor positivo for digitado, armazene no vetor A, se um valor negativo for digitado, armazene no vetor B. Se um valor zero for digitado, ignore o valor.
+
+Em seguida faça:
+
+Se a quantidade de valores positivos for maior ou igual a quantidade de valores negativos, mostre a média e quantos valores estão acima da média dos valores positivos (valores separados por um espaço).
+Se a quantidade de valores negativos for maior do que a quantidade de valores positivos, mostre quantos valores negativos foram fornecidos.
+*/
+
 #include <stdio.h>
 
 int main() {
